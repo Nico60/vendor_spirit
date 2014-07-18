@@ -304,10 +304,12 @@ else
     endif
 endif
 
+SPIRIT_VERSION = v1.0
 SpiritRom_Version=4.4.4
-CM_MOD_VERSION := SpiritRom-$(SpiritRom_Version)-$(shell date -u +%Y%m%d)$(CM_EXTRAVERSION)-$(CM_BUILD)
+CM_MOD_VERSION := SpiritRom-$(SpiritRom_Version)-$(SPIRIT_VERSION)-$(shell date -u +%Y%m%d)$(CM_EXTRAVERSION)-$(CM_BUILD)
 
 PRODUCT_PROPERTY_OVERRIDES += \
+  ro.spirit.version=$(SPIRIT_VERSION) \
   ro.cm.version=$(CM_VERSION) \
   ro.modversion=$(CM_MOD_VERSION) \
   ro.cmlegal.url=http://www.cyanogenmod.org/docs/privacy
