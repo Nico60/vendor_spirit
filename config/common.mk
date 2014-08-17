@@ -146,7 +146,6 @@ PRODUCT_PACKAGES += \
     audio_effects.conf \
     Apollo \
     CMFileManager \
-    EOSWeather \
     LockClock \
     CMFota \
     CMAccount \
