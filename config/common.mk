@@ -308,7 +308,7 @@ else
     endif
 endif
 
-SPIRIT_VERSION = v1.2
+SPIRIT_VERSION = v1.3
 SpiritRom_Version=4.4.4
 CM_MOD_VERSION := SpiritRom-$(SpiritRom_Version)-$(SPIRIT_VERSION)-$(shell date -u +%Y%m%d)$(CM_EXTRAVERSION)-$(CM_BUILD)
 
