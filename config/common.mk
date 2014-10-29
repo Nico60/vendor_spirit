@@ -222,7 +222,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/spirit/overlay/common
 
 SPIRIT_VERSION_MAJOR = 4.4
 SPIRIT_VERSION_MINOR = 4
-Version = v1.5
+Version = v1.6
 SPIRIT_VERSION := SpiritRom-$(SPIRIT_VERSION_MAJOR).$(SPIRIT_VERSION_MINOR)-$(Version)-$(shell date -u +%Y%m%d)-$(SPIRIT_BUILD)
 
 PRODUCT_PROPERTY_OVERRIDES += \
