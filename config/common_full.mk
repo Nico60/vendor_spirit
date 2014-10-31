@@ -34,4 +34,6 @@ PRODUCT_PACKAGES += \
 
 # Extra tools
 PRODUCT_PACKAGES += \
-    vim
+    vim \
+    zip \
+    unrar
