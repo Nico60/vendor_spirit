@@ -131,7 +131,9 @@ PRODUCT_PACKAGES += \
     BluetoothExt \
     libemoji \
     Apollo \
-    vim
+    vim \
+    zip \
+    unrar
 
 # Spirit packages
 PRODUCT_PACKAGES += \
