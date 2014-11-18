@@ -74,7 +74,8 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/spirit/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/spirit/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
-    vendor/spirit/prebuilt/common/bin/50-backupScript.sh:system/addon.d/50-backupScript.sh
+    vendor/spirit/prebuilt/common/bin/50-backupScript.sh:system/addon.d/50-backupScript.sh \
+    vendor/spirit/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
@@ -106,38 +107,37 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
 
-# This is CM!
+# This is SR!
 PRODUCT_COPY_FILES += \
-    vendor/spirit/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
+    vendor/spirit/config/permissions/com.spirit.android.xml:system/etc/permissions/com.spirit.android.xml
+
+# Bring in all video files
+$(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
+
+# Include SR audio files
+include vendor/spirit/config/spirit_audio.mk
+
+# Include LatinIME dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/spirit/overlay/dictionaries
 
 # T-Mobile theme engine
-include vendor/spirit/config/themes_common.mk
-
-# Required packages
-PRODUCT_PACKAGES += \
-    Development \
-    LatinIME \
-    BluetoothExt
-
-# Optional packages
-PRODUCT_PACKAGES += \
-    VoicePlus \
-    Basic \
-    libemoji
+#include vendor/spirit/config/themes_common.mk
 
 # Custom packages
 PRODUCT_PACKAGES += \
-    Launcher3 \
-    Trebuchet \
-    DSPManager \
-    libcyanogen-dsp \
-    audio_effects.conf \
+    LiveWallpapersPicker \
+    Development \
+    LatinIME \
+    BluetoothExt \
+    libemoji \
     Apollo \
-    CMFileManager \
-    LockClock \
-    CMAccount \
-    CMHome \
-    KernelTweaker
+    vim
+
+# Spirit packages
+PRODUCT_PACKAGES += \
+    SlimLauncher \
+    DashClock \
+    DeskClock
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
@@ -170,10 +170,6 @@ PRODUCT_PACKAGES += \
     sqlite3 \
     strace
 
-#OmniRom Packages
-PRODUCT_PACKAGES += \
-    OmniSwitch
-
 # Openssh
 PRODUCT_PACKAGES += \
     scp \
@@ -188,20 +184,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     rsync
 
-# Screen recorder
-PRODUCT_PACKAGES += \
-    ScreenRecorder \
-    libscreenrecorder
-
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
     libstagefright_soft_ffmpegadec \
     libstagefright_soft_ffmpegvdec \
     libFFmpegExtractor \
     libnamparser
-
-# These packages are excluded from user builds
-ifneq ($(TARGET_BUILD_VARIANT),user)
 
 PRODUCT_PACKAGES += \
     procmem \
@@ -210,27 +198,17 @@ PRODUCT_PACKAGES += \
     su
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.root_access=1
-else
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.root_access=0
-
-endif
+    persist.sys.root_access=3
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/spirit/overlay/common
 
-SPIRIT_VERSION_MAJOR = 4.4
-SPIRIT_VERSION_MINOR = 4
-Version = v1.7
+SPIRIT_VERSION_MAJOR = 5
+SPIRIT_VERSION_MINOR = 0
+Version = v2.00
 SPIRIT_VERSION := SpiritRom-$(SPIRIT_VERSION_MAJOR).$(SPIRIT_VERSION_MINOR)-$(Version)-$(shell date -u +%Y%m%d)-$(SPIRIT_BUILD)
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.spirit.version=$(SPIRIT_VERSION) \
-  ro.modversion=$(SPIRIT_VERSION) \
-  ro.spirit.display.version=$(SPIRIT_VERSION)
-
--include vendor/cm-priv/keys/keys.mk
 
 # by default, do not update the recovery with system updates
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false

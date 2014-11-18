@@ -1,5 +1,5 @@
 # Inherit common stuff
-$(call inherit-product, vendor/spirit/config/common_full.mk)
+$(call inherit-product, vendor/spirit/config/common.mk)
 
 # Default notification/alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -8,7 +8,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 ifeq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
     PRODUCT_COPY_FILES += \
-        vendor/spirit/prebuilt/common/bootanimation/480.zip:system/media/bootanimation.zip
+        vendor/spirit/prebuilt/common/bootanimation/1280.zip:system/media/bootanimation.zip
 endif
-
-$(call inherit-product, vendor/spirit/config/telephony.mk)

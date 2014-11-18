@@ -1,5 +1,5 @@
 #
-# CyanogenMod Audio Files
+# Spirit-Rom Audio Files
 #
 
 ALARM_PATH := vendor/spirit/prebuilt/common/media/audio/alarms
