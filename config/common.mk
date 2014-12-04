@@ -207,6 +207,8 @@ SPIRIT_VERSION := SpiritRom-$(SPIRIT_VERSION_MAJOR).$(SPIRIT_VERSION_MINOR)-$(Ve
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.spirit.version=$(SPIRIT_VERSION) \
 
+SQUISHER_SCRIPT := vendor/spirit/tools/squisher
+
 # by default, do not update the recovery with system updates
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 
