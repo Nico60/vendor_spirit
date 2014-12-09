@@ -130,7 +130,7 @@ PRODUCT_PACKAGES += \
     LatinIME \
     BluetoothExt \
     libemoji \
-    Apollo \
+    Eleven \
     vim \
     zip \
     unrar
