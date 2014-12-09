@@ -128,6 +128,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     Development \
     LatinIME \
+    AudioFX \
     BluetoothExt \
     libemoji \
     Eleven \
