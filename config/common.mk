@@ -193,7 +193,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     procmem \
     procrank \
-    Superuser \
     su
 
 PRODUCT_PROPERTY_OVERRIDES += \
