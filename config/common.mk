@@ -130,7 +130,8 @@ PRODUCT_PACKAGES += \
     Eleven \
     vim \
     zip \
-    unrar
+    unrar \
+    Terminal
 
 # Spirit packages
 PRODUCT_PACKAGES += \
