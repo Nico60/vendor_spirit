@@ -104,9 +104,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/spirit/config/permissions/com.spirit.android.xml:system/etc/permissions/com.spirit.android.xml
 
-# Bring in all video files
-$(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
-
 # Include SR audio files
 include vendor/spirit/config/spirit_audio.mk
 
