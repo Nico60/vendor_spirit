@@ -111,7 +111,7 @@ include vendor/spirit/config/spirit_audio.mk
 PRODUCT_PACKAGE_OVERLAYS += vendor/spirit/overlay/dictionaries
 
 # T-Mobile theme engine
-#include vendor/spirit/config/themes_common.mk
+include vendor/spirit/config/themes_common.mk
 
 # Custom packages
 PRODUCT_PACKAGES += \
