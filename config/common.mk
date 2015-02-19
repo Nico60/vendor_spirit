@@ -216,4 +216,15 @@ PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
 
 -include vendor/cyngn/product.mk
 
+# Inherit sabermod configs.  Default to arm if TARGET_ARCH is not defined.
+ifndef TARGET_ARCH
+  $(warning ********************************************************************************)
+  $(warning *  TARGET_ARCH not defined, defaulting to arm.)
+  $(warning *  To use arm64 set TARGET_ARCH := arm64)
+  $(warning *  in device tree before common.mk is called.)
+  $(warning ********************************************************************************)
+TARGET_ARCH := arm
+endif
+include vendor/spirit/config/sm.mk
+
 $(call prepend-product-if-exists, vendor/extra/product.mk)
