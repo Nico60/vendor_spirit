@@ -197,25 +197,29 @@ ifeq ($(strip $(HOST_OS)),linux)
   # Add more modules if needed for devices in BoardConfig.mk
   # LOCAL_DISABLE_GRAPHITE +=
   LOCAL_DISABLE_GRAPHITE := \
-    libunwind \
-    libFFTEm \
-    libicui18n \
-    libskia \
-    libvpx \
-    libmedia_jni \
-    libstagefright_mp3dec \
-    libart \
-    mdnsd \
-    libwebrtc_spl \
-    third_party_WebKit_Source_core_webcore_svg_gyp \
-    libjni_filtershow_filters \
-    libavformat \
-    libavcodec \
-    skia_skia_library_gyp \
-    libSR_Core \
-    libwebviewchromium \
-    third_party_libvpx_libvpx_gyp \
-    ui_gl_gl_gyp
+	libunwind \
+	libFFTEm \
+	libicui18n \
+	libskia \
+	libvpx \
+	libmedia_jni \
+	libstagefright_mp3dec \
+	libart \
+	libstagefright_amrwbenc \
+	libpdfium \
+	libpdfiumcore \
+	libwebviewchromium \
+	libwebviewchromium_loader \
+	libwebviewchromium_plat_support \
+	libjni_filtershow_filters \
+	fio \
+	libavformat \
+	libavutil \
+	libswresample \
+	libavcodec \
+	libswscale \
+	libwebrtc_spl \
+	libncurses
 
   ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
     OPT2 := (max)
